@@ -18,7 +18,7 @@ current_ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
 known_ip=$(tail -1 $working_dir/ip_list.txt)
 
 ### Get Current Date and Time
-timestamp=$(timedatectl | grep "Universal time:" | awk '{ print $3, $4, $5 }')
+timestamp=$(date | awk '{print $1, $2, $3, $4, $5}')
 
 ## check for existing log file and create one if needed
 ##
